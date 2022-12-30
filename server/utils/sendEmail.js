@@ -5,17 +5,17 @@ const crypto = require("crypto")
 const sendEmail = async (email, subject, html) => {
     try {
         const transporter = nodemailer.createTransport({
-            host: process.env.HOST,
-            port: process.env.EMAIL_PORT,
+            host: process.env.MAILTRAP_HOST,
+            port: process.env.MAILTRAP_EMAIL_PORT,
 
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASSWORD,
+                user: process.env.MAILTRAP_EMAIL_USER,
+                pass: process.env.MAILTRAP_EMAIL_PASSWORD,
             },
         })
 
         await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+            from: process.env.GMAIL_ID || "",
             to: email,
             subject: subject,
             html: html,
