@@ -1,0 +1,29 @@
+.container {
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: black;
+}
+
+#nav-logo {
+    height: 40px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.user-photo {
+    height: 40px;
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
+}

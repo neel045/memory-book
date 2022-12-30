@@ -1,0 +1,180 @@
+:root {
+    --primary: #1aac83;
+    --error: #e7195a;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+body {
+    background: white;
+}
+
+label,
+input {
+    display: block;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    border: 0;
+    padding: 10px 20px;
+    font-family: "Poppins";
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    margin: 0px 10px;
+    background: var(--primary);
+}
+
+.signup > h3 {
+    color: var(--primary);
+    text-align: center;
+}
+
+div.error {
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+input.error {
+    border: 1px solid var(--error);
+}
+
+form.signup,
+form.login {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.error-message,
+.success-message {
+    color: var(--error);
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 1px solid;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.success-message {
+    color: var(--primary);
+    /* font-size: 1.2rem;
+    padding: 10px;
+    border: 1px solid;
+    margin: 10px;
+    border-radius: 5px; */
+}
+
+.heart {
+    color: red;
+}
+
+.material-icons {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+//post-form
+/* form.post-form {
+    padding: 30px;
+    box-shadow: rgb(0 0 0 / 87%) 1.95px 2.95px 6.6px;
+    width: 500px;
+} */
+
+.post-form > label {
+    width: 40px;
+}
+
+.post-form > input {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+}
+
+.post-form > h3 {
+    color: var(--primary);
+}
+
+.post-form > textarea {
+    outline: none;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid;
+    box-shadow: rgb(0 0 0 / 87%) 1.95px 2.95px 6.6px;
+    font-size: 20px;
+}
+
+.post-form > button {
+    padding: 8px 22px;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.post-form {
+    height: 300px;
+    position: sticky;
+    top: 40px;
+    margin: 40px 0px;
+    padding: 30px;
+    box-shadow: rgb(0 0 0 / 87%) 1.95px 2.95px 6.6px;
+}
+
+//user card
+#about {
+    padding: 20px;
+}
+
+.search-card {
+    width: 300px;
+    height: 400px;
+    position: sticky;
+    top: 40px;
+    margin: 40px 0px;
+    padding: 30px;
+}
+
+.forget-password-page,
+.reset-password-page {
+    height: 80vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.forget-password-form,
+.reset-password-form {
+    box-shadow: rgb(0 0 0 / 87%) 1.95px 2.95px 6.6px;
+    padding: 40px;
+    box-sizing: border-box;
+    width: 600px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
