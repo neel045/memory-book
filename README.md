@@ -64,8 +64,10 @@ git clone https://github.com/neel045/memory-book.git
     yarn dev
     ```
 
+4. make sure to make public directory in server directory, inside public directory make anothre directory named img and inside img directory make users and posts directory, the users directory will store user photos and posts directory will store post photos
+
 # Thank you!
 
-If you appreciated this, feel free to follow me
+If you appreciated this, feel free to follow me.
 
 [![Neel Patel Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/patelneel045)
