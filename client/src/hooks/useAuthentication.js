@@ -44,7 +44,7 @@ const useAuthentication = () => {
         setIsLoading(false)
     }
 
-    return { error, isLoading, auth, msg, setError }
+    return { error, isLoading, auth, msg, setMsg, setError }
 }
 
 export default useAuthentication

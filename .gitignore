@@ -1,3 +1,5 @@
 /client/node_modules
 /server/node_modules
+# /server/public/img/posts
+# /server/public/img/users
 /server/.env

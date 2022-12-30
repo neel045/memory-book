@@ -7,11 +7,12 @@ const Auth = () => {
     const [isSignupPage, setIsSignupPage] = useState(false)
     const [currentPage, setCurrentPage] = useState("signup")
     const [formData, setFormData] = useState({ name: "", email: "", password: "" })
-    const { error, setError, msg, isLoading, auth } = useAuthentication()
+    const { error, setError, msg, isLoading, auth, setMsg } = useAuthentication()
 
     const handlePage = (e) => {
         e.preventDefault()
         setError("")
+        setMsg("")
         setIsSignupPage((prev) => !prev)
     }
 

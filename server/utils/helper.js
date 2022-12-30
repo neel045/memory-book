@@ -2,6 +2,8 @@ const multer = require("multer")
 const handleAsync = require("./handleAsync")
 const crypto = require("crypto")
 const sharp = require("sharp")
+const fs = require("fs")
+const path = require("path")
 
 class JsonResponse {
     constructor(statusCode) {

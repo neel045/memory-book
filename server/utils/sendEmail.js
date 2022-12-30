@@ -1,27 +1,42 @@
 const nodemailer = require("nodemailer")
 const Token = require("../models/token.model")
 const crypto = require("crypto")
+const sendGrid = require("@sendgrid/mail")
+sendGrid.setApiKey(process.env.SENDGRID_API_KEY)
 
 const sendEmail = async (email, subject, html) => {
     try {
-        const transporter = nodemailer.createTransport({
-            host: process.env.MAILTRAP_HOST,
-            port: process.env.MAILTRAP_EMAIL_PORT,
+        if (process.env.ENV === "development") {
+            const transporter = nodemailer.createTransport({
+                host: process.env.MAILTRAP_HOST,
+                port: process.env.MAILTRAP_EMAIL_PORT,
 
-            auth: {
-                user: process.env.MAILTRAP_EMAIL_USER,
-                pass: process.env.MAILTRAP_EMAIL_PASSWORD,
-            },
-        })
+                auth: {
+                    user: process.env.MAILTRAP_EMAIL_USER,
+                    pass: process.env.MAILTRAP_EMAIL_PASSWORD,
+                },
+            })
 
-        await transporter.sendMail({
-            from: process.env.GMAIL_ID || "",
-            to: email,
-            subject: subject,
-            html: html,
-        })
+            await transporter.sendMail({
+                from: process.env.GMAIL_ID || "",
+                to: email,
+                subject: subject,
+                html: html,
+            })
 
-        console.log("mail sent")
+            console.log("mail sent")
+        }
+
+        if (process.env.ENV === "production") {
+            await sendGrid.send({
+                to: email,
+                from: process.env.GMAIL_ID,
+                subject: subject,
+                html: html,
+            })
+
+            console.log("sendgrid has sent mail")
+        }
     } catch (error) {
         console.log(error)
     }

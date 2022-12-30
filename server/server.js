@@ -4,9 +4,17 @@ dotenv.config()
 
 const app = require("./app")
 
-// const DB = process.env.DB_URI.replace("<password>", process.env.DB_PASS)
-const DB = process.env.DB_LOCAL_URI
+let DB
+
+if (process.env.ENV === "production") {
+    DB = process.env.DB_URI.replace("<password>", process.env.DB_PASS)
+}
+if (process.env.ENV === "development") {
+    DB = process.env.DB_LOCAL_URI
+}
+
 mongoose.set("strictQuery", false)
+
 mongoose
     .connect(DB, {
         useNewUrlParser: true,
