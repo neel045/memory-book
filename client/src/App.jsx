@@ -15,12 +15,7 @@ function App() {
             <BrowserRouter>
                 <Navbar />
                 <Routes>
-                    <Route
-                        exact
-                        path="/profile"
-                        // element={!user ? <Navigate to="/auth" /> : <Profile />}
-                        element={<Profile />}
-                    />
+                    <Route exact path="/profile" element={<Profile />} />
                     <Route exact path="/" element={!user ? <Navigate to="/auth" /> : <Home />} />
                     <Route exact path="/auth" element={!user ? <Auth /> : <Navigate to="/" />} />
                     <Route exact path="/forget-password" element={<ForgetPassword />} />

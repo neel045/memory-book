@@ -71,4 +71,6 @@ const resizePostPhoto = handleAsync(async (req, res, next) => {
     next()
 })
 
+const cratePublicDirectories = (rootDir) => {}
+
 module.exports = { JsonResponse, uploadPhoto, resizeUserPhoto, resizePostPhoto }

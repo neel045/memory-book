@@ -6,6 +6,7 @@ const path = require("path")
 const userRoutes = require("./routes/user.routes")
 const postRoutes = require("./routes/post.routes")
 const authRoutes = require("./routes/auth.routes")
+const errorHandler = require("./utils/errorHandler")
 
 const app = express()
 
@@ -22,6 +23,6 @@ app.all("*", (req, res) => {
     res.status(404).json({ message: "Not Found" })
 })
 
-// app.use(errorHandler)
+app.use(errorHandler)
 
-module.exports = app
+module.exports.app = app

@@ -5,6 +5,7 @@ import usePostContext from "../hooks/usePostsContext"
 const CreatePostForm = () => {
     const [text, setText] = useState("")
     const [fileName, setFileName] = useState("")
+    const [filePath, setFilePath] = useState("")
     const [error, setError] = useState("")
     const { dispatch } = usePostContext()
     const { user, token } = useAuthContext()
@@ -33,8 +34,8 @@ const CreatePostForm = () => {
 
         if (res.ok) {
             setText("")
-            console.log(json.data.post)
             setFileName("")
+            setFilePath("")
             dispatch({ type: "CREATE_POST", payload: json.data.post })
         }
     }
@@ -57,7 +58,11 @@ const CreatePostForm = () => {
                 type="file"
                 name="photo"
                 id="photo"
-                onChange={(e) => setFileName(e.target.files[0].name)}
+                onChange={(e) => {
+                    setFileName(e.target.files[0].name)
+                    setFilePath(e.target.value)
+                }}
+                value={filePath}
             />
             {error && <div className="error-message">{error}</div>}
             <button>Post</button>

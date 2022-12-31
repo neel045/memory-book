@@ -1,8 +1,10 @@
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
 dotenv.config()
+const path = require("path")
+const fs = require("fs")
 
-const app = require("./app")
+const { app } = require("./app")
 
 let DB
 
@@ -21,7 +23,9 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => console.log("DB connected"))
-    .catch((err) => console.log(err))
+    .catch((err) => {
+        console.log(err)
+    })
 
 const port = process.env.PORT || 3000
 const server = app.listen(port, () => {

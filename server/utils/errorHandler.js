@@ -5,7 +5,9 @@ module.exports = (err, req, res, next) => {
     error.name = err.name
     error.message = err.message
 
-    console.log(error.name)
-
-    return new JsonResponse(401).error(res, "invalid token")
+    if (process.env.ENV === "production") {
+        return new JsonResponse(500).error(res, "Internal Server Error")
+    } else {
+        return new JsonResponse(401).error(res, err.message, { error: error.stacktrace })
+    }
 }

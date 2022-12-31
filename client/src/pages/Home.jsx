@@ -42,7 +42,7 @@ const Home = () => {
                 <div>{posts && posts.map((post) => <PostDetail key={post._id} post={post} />)}</div>
             )}
 
-            <SearchUser />
+            {user && <SearchUser />}
         </div>
     )
 }

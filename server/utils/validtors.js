@@ -24,9 +24,11 @@ module.exports.signinValidator = (data) => {
 
 module.exports.userUpdateValidator = (data) => {
     const schema = Joi.object({
-        name: Joi.string().min(2).max(50).trim().required().label("Name"),
-        photo: Joi.string(),
-        about: Joi.string().max(250).trim().label("About"),
+        name: Joi.string().min(2).max(50).trim().label("Name"),
+        photo: Joi.string().label("photo"),
+        about: Joi.string()
+            .allow(...["", null])
+            .label("about"),
     })
 
     return schema.validate(data)

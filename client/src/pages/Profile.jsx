@@ -78,7 +78,6 @@ const Profile = () => {
     const updateUser = async (e) => {
         e.preventDefault()
         const formData = new FormData(e.target)
-        console.log({ formData })
 
         const res = await fetch(`/api/users/${user._id}`, {
             method: "PATCH",
@@ -126,10 +125,8 @@ const Profile = () => {
 
         const json = await res.json()
 
-        console.log(json)
         if (json.status) {
             setMsg(json.message)
-        } else {
         }
     }
 
@@ -320,7 +317,19 @@ const Profile = () => {
                 </div>
             )}
 
-            {!user && <Navigate to="/auth" />}
+            {!user && (
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        height: "90vh",
+                    }}
+                >
+                    <button>Go To Signup/Login Page</button>
+                </div>
+            )}
         </div>
     )
 }
