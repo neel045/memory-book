@@ -1,0 +1,27 @@
+[build]
+  command = "vite build"
+  functions = "netlify/functions"
+  publish = "dist"
+
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://memory-book-api.onrender.com/api/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/img/*"
+  to = "https://memory-book-api.onrender.com/img/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+
+
