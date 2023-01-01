@@ -6,7 +6,7 @@ sendGrid.setApiKey(process.env.SENDGRID_API_KEY)
 
 const sendEmail = async (email, subject, html) => {
     try {
-        if (process.env.ENV === "development") {
+        if (process.env.ENV == "development") {
             const transporter = nodemailer.createTransport({
                 host: process.env.MAILTRAP_HOST,
                 port: process.env.MAILTRAP_EMAIL_PORT,

@@ -31,7 +31,7 @@ const Navbar = () => {
                                 />
                                 <p>{user.name}</p>
                             </Link>
-                            <Link to="/logout">
+                            <Link>
                                 <button onClick={handleLogout}> Logout</button>
                             </Link>
                         </div>
