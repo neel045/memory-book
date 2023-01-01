@@ -4,6 +4,9 @@ This is a social media app, where you can make new friends.
 
 Live Demo: [MemoryBook](https://memory-book-client.netlify.app/)
 
+![memory-book](https://user-images.githubusercontent.com/60743345/210159448-4f001cdb-f37c-4b20-91f5-4010b2e90bd7.jpg)
+
+
 -   [Getting Started](#getting-started)
     -   [Requirements](#requirements)
 -   [Setup](#setup)
